@@ -2,9 +2,15 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Oi</title>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.0/css/bulma.min.css">
+    <script src="{{ url_for('static' , filename='bower_components/mustache/mustache.min.js') }}" charset="utf-8"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="{{ url_for('static', filename='js/main.js')}}" charset="utf-8"></script>
   </head>
   <body>
-    
+    <div id="target"></div>
+    <div id="chart" class="field has-addons has-addons-centered"></div>
   </body>
 </html>
