@@ -1,10 +1,11 @@
 from flask import Flask
 from flask import request, abort, render_template, make_response, jsonify, json
-from ApiWrapper.HighChart.wrapper import Wrapper
+from ApiWrapper.wrapper import Wrapper
 
 app = Flask(__name__)
 ApiWrapper = Wrapper('config/config.json')
 ApiWrapper.reloadFiles()
+ApiWrapper.observe();
 
 @app.route('/')
 def index():
