@@ -1,0 +1,11 @@
+{
+
+    "api":{
+        "token": "6ad96f71399113836c3001e88aaa325c",
+        "currencies": ["BRL", "EUR", "ARS"],
+        "titles": {"BRL": "Cotação do REAL", "EUR": "Cotação do EURO", "ARS": "Cotação do Peso Argentino"}
+      },
+    "history": 7,
+    "modelPath": "model/highchart.json",
+    "resultDir": "model"
+}
