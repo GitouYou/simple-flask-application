@@ -1,0 +1,30 @@
+{
+  "chart": {
+        "type": "line"
+        },
+  "title": {
+      "text": ""
+    },
+  "subtitle": {
+      "text":"Source:  https://currencylayer.com"
+    },
+  "yAxis": {
+      "title":{"text":"Dollar"}
+    },
+
+  "xAxis":{"type":"datetime"},
+
+  "legend":{"layout":"vertical","align":"right","verticalAlign":"middle"},
+
+  "plotOptions":{
+    "series":
+      {
+        "pointStart":2017
+      }
+    },
+
+    "series":
+    [
+      {"name":"Valor","pointStart":0,"pointInterval":86400000,"data":[]}
+    ]
+}
