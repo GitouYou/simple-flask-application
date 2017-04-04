@@ -2,14 +2,38 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Oi</title>
+    <title>Simple Flask Application</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.0/css/bulma.min.css">
-    <script src="{{ url_for('static' , filename='bower_components/mustache/mustache.min.js') }}" charset="utf-8"></script>
+    <script src="{{ url_for('static' , filename='js/mustache.min.js') }}" charset="utf-8"></script>
     <script src="https://code.highcharts.com/highcharts.js"></script>
     <script src="https://code.highcharts.com/modules/exporting.js"></script>
     <script src="{{ url_for('static', filename='js/main.js')}}" charset="utf-8"></script>
   </head>
   <body>
+    <nav class="nav">
+      <div class="nav-left">
+        <a href="https://pacific-dawn-49731.herokuapp.com/" class="nav-item">
+          <img src="{{ url_for('static', filename='flask.png') }}" alt="Bulma logo">
+        </a>
+      </div>
+
+      <div class="nav-right nav-menu is-active">
+        <a href="https://pacific-dawn-49731.herokuapp.com/" class="nav-item">
+          Home
+        </a>
+
+
+        <span class="nav-item">
+          <a href="https://github.com/joaofreires/simple-flask-application" class="nav-item">
+            <span class="icon">
+              <img src="https://cdn0.iconfinder.com/data/icons/octicons/1024/mark-github-128.png" alt="Bulma logo">
+            </span>
+          </a>
+        </span>
+      </div>
+
+    </nav>
     <div id="target"></div>
     <div id="chart" class="field has-addons has-addons-centered"></div>
   </body>
