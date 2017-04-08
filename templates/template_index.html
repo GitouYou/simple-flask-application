@@ -1,17 +1,13 @@
+
+
   <div class="field has-addons has-addons-centered">
-    <p class="control">
-      <span class="select">
+    <p class="control is-expanded">
+      <span class="select is-fullwidth">
         <select name="country" id="selector">
           {{#currencies}}
           <option value="{{.}}">{{.}}</option>
           {{/currencies}}
         </select>
       </span>
-    </p>
-
-    <p class="control">
-      <a class="button is-primary" id="select-button">
-        Select
-      </a>
     </p>
   </div>

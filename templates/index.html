@@ -6,6 +6,7 @@
     <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.0/css/bulma.min.css">
     <script src="{{ url_for('static' , filename='js/mustache.min.js') }}" charset="utf-8"></script>
+    <script src="{{ url_for('static' , filename='js/docReady.js') }}" charset="utf-8"></script>
     <script src="https://code.highcharts.com/highcharts.js"></script>
     <script src="https://code.highcharts.com/modules/exporting.js"></script>
     <script src="{{ url_for('static', filename='js/main.js')}}" charset="utf-8"></script>
@@ -34,7 +35,17 @@
       </div>
 
     </nav>
+
+    <section class="hero is-primary">
+      <div class="hero-body" id="banner">
+
+      </div>
+    </section>
     <div id="target"></div>
-    <div id="chart" class="field has-addons has-addons-centered"></div>
+    <section class="section">
+
+      <div id="chart" class="field has-addons has-addons-centered"></div>
+    </section>
+
   </body>
 </html>
