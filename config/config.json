@@ -1,7 +1,7 @@
 {
 
     "api":{
-        "token": "6ad96f71399113836c3001e88aaa325c",
+        "token": "asdada",
         "currencies": ["BRL", "EUR", "ARS"],
         "titles": {"BRL": "Cotação do REAL", "EUR": "Cotação do EURO", "ARS": "Cotação do Peso Argentino"}
       },
