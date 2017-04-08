@@ -24,6 +24,7 @@ pip-log.txt
 # Unit test / coverage
 .coverage
 .tox
+test*.py
 
 # Mac OS X
 .DS_Store
