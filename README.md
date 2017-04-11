@@ -17,7 +17,8 @@ You can use pip to install
     $ pip install -e simple-flask-app
 ```
 
-#### Config  
+#### Config
+```json
 {
     "api":{
         "token": "", // your api token (currency layer)
@@ -28,7 +29,7 @@ You can use pip to install
     "modelPath": "model/highchart.json", //Highchart model
     "resultDir": "model" //result directory path
 }
-
+```
 NOTE: Maybe just add new currencies throw a error, so you need go to file `ApiWrapper/currencies/currencie_factory.py` and add:
 ```py
 if name.upper() == 'YOUR_CURRENCY':
