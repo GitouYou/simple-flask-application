@@ -11,9 +11,19 @@ from time import sleep
 
 '''
     Classe que envolve a as requisições da api e as moedas suportadas
+
+    String path : caminho para o arquivo de configuração
+    API Object api : api de base para as requisições
 '''
+
+
 class Wrapper:
-    def __init__(self, path):
+    def __init__(self, path, api=None):
+
+        self._api = api
+        if not api:
+            self._api = ApiCaller(self._configObj['api']['token'], *myCurrs)
+
         try:
             # abre o arquivo de configuração
             with open(path, 'r') as configFile:
@@ -87,7 +97,6 @@ class Wrapper:
     '''
 
     def getObj(self, method, file):
-        #retorna um json do arquivo requisitado
         if method == "history":
             if self._check():
                 return self._getObjHistory(file)
@@ -120,7 +129,6 @@ class Wrapper:
     '''
     def _createObjHistory(self):
         myCurrs = []
-        self._api = ApiCaller(self._configObj['api']['token'], *myCurrs)
 
         for currency in self._configObj['api']['currencies']:
             myCurrs.append(curFac.CurrencyFactory(currency))
