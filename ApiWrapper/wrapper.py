@@ -20,10 +20,6 @@ from time import sleep
 class Wrapper:
     def __init__(self, path, api=None):
 
-        self._api = api
-        if not api:
-            self._api = ApiCaller(self._configObj['api']['token'], *myCurrs)
-
         try:
             # abre o arquivo de configuração
             with open(path, 'r') as configFile:
@@ -44,6 +40,17 @@ class Wrapper:
 
         except Exception:
             raise RuntimeError("Unexpected Error on read config file")
+
+        self._myCurrencies = []
+
+        for currency in self._configObj['api']['currencies']:
+            self._myCurrencies.append(curFac.CurrencyFactory(currency))
+
+        self._api = api
+        if not api:
+            self._api = ApiCaller(
+                                self._configObj['api']['token'],
+                                *self._myCurrencies)
 
     '''
         chamada da thread que observa quando é preciso atualizar os dados
@@ -128,11 +135,6 @@ class Wrapper:
         cria todos os arquivos referentes a cada moeda
     '''
     def _createObjHistory(self):
-        myCurrs = []
-
-        for currency in self._configObj['api']['currencies']:
-            myCurrs.append(curFac.CurrencyFactory(currency))
-
         response = {}
         try:
             response = self._api.history(self._configObj["history"])
@@ -149,7 +151,7 @@ class Wrapper:
 
             like a matrix n*m
         '''
-        for item in myCurrs:
+        for item in self._myCurrencies:
             thisCurrency = copy.deepcopy(myJson)
             for jsonResponse in response["response"]:
                 thisCurrency["series"][0]["data"]\
