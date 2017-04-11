@@ -18,7 +18,7 @@ You can use pip to install
 ```
 
 #### Config
-```json
+```js
 {
     "api":{
         "token": "", // your api token (currency layer)
